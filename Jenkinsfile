@@ -1,5 +1,5 @@
 node {
-    def app
+    def root = tool name: 'Go 1.12.6', type: 'go'
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
