@@ -9,7 +9,7 @@ node {
 
 
     stage('Test scrabble') {
-        go test -v
+        sh 'go test -v'
     }
 
     stage('Build image') {
