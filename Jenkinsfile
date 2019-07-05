@@ -1,5 +1,9 @@
 node {
     def root = tool name: 'Go 1.12.6', type: 'go'
+    
+    withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
+        sh 'go version'
+    }
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
