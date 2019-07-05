@@ -1,9 +1,9 @@
 node {
     def root = tool name: 'Go 1.12.6', type: 'go'
     
-    withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
-        sh 'go version'
-    }
+    ws("${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/src/github.com/melina/scrabble") {
+        withEnv(["GOROOT=${root}", "GOPATH=${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}/", "PATH+GO=${root}/bin"]) {
+            env.PATH="${GOPATH}/bin:$PATH"
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
