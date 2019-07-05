@@ -8,7 +8,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("melibou/scrabble", "Dockerfile.scratch .")
+        app = docker.build("melibou/scrabble Dockerfile.scratch .")
     }
 
     stage('Push image') {
