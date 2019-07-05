@@ -9,9 +9,7 @@ node {
 
 
     stage('Test scrabble') {
-      steps {
         go test -v
-        }
     }
 
     stage('Build image') {
