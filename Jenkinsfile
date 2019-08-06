@@ -13,6 +13,7 @@ node {
 
 
             stage('Test scrabble') {
+                sh 'env'
                 sh 'go test -v'
             }
 
